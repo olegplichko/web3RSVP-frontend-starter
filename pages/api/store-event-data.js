@@ -1,5 +1,5 @@
 import { Web3Storage, File, getFilesFromPath } from "web3.storage";
-const { resolve } = required("path");
+const { resolve } = require("path");
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
@@ -20,7 +20,7 @@ async function storeEventData(req, res) {
     } catch (err) {
         return res
             .status(500)
-            .json({ error: "Error creating event", success: false });
+            .json({ error: "Error creating event", success: false, stackTrace: err.message });
     }
 }
 
