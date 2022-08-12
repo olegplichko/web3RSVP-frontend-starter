@@ -27,7 +27,7 @@ async function storeEventData(req, res) {
 async function makeFileObjects(body) {
     const buffer = Buffer.from(JSON.stringify(body));
 
-    const imageDirectory = resolve(process.cwd(), `public/images/${body.image}`)
+    const imageDirectory = resolve(process.cwd(), `public/images/${body.image}`);
     const files = await getFilesFromPath(imageDirectory);
 
     files.push(new File([buffer], "data.json"));
@@ -38,7 +38,7 @@ function makeStorageClinet() {
     return new Web3Storage( { token: process.env.WEB3STORAGE_TOKEN });
 }
 
-async function storeFIles(files) {
+async function storeFiles(files) {
     const client = makeStorageClinet();
     const cid = await client.put(files);
     return cid;
