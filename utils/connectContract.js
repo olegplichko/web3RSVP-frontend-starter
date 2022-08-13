@@ -6,11 +6,11 @@ function connectContract() {
     const contractABI = abiJSON.abi;
     let rsvpContract;
     try {
-        const { etherum } = window;
+        const { ethereum } = window;
 
-        if (etherum) {
+        if (ethereum) {
             // checking for eth object in the window
-            const provider = new ethers.providers.Web3Provider(etherum);
+            const provider = new ethers.providers.Web3Provider(ethereum);
             const signer = provider.getSigner();
             // connection to the contract
             rsvpContract = new ethers.Contract(contractAddress, contractABI, signer);
