@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { gql, useQuery } from "apollo/client";
-import { ConnectButton } from "@rainbow-me/ranibowkit";
+import { gql, useQuery } from "@apollo/client";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 import EventCard from "../../components/EventCard";
 import Dashboard from "../../components/Dashboard";
