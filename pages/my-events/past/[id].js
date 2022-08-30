@@ -189,13 +189,17 @@ function PastEvent() {
                     </div>
                   </div>
                 </section>
+              ) : (
+                <p>You do not have permission to manage this event.</p>
               )
+            ) : (
+              <ConnectButton />
             )}
           </div>
         </div>
       </div>
     )
-  )
+  );
 }
 
 export default PastEvent;
